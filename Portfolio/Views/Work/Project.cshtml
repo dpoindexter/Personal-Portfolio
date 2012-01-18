@@ -5,11 +5,11 @@
 <article id="project" class="grid_12">
     <section class="project-nav" style="">
         <section id="thumbnails">
-            <img src="@Url.Content("~/img/elements/back-key.png")" class="keys" alt=" "/>
+            <img src="@Url.Content("~/img/elements/back-key.png")" class="keys" id="back-key" alt=" "/>
             <!-- ko foreach: images -->
             <a class="thumbnail-graphic" data-bind="click: $parent.moveTo"><img data-bind="attr: { src: $parent.isActive($data) }" alt=" "/></a>
             <!-- /ko -->
-            <img src="@Url.Content("~/img/elements/next-key.png")" class="keys" alt=" "/>
+            <img src="@Url.Content("~/img/elements/next-key.png")" class="keys" id="next-key" alt=" "/>
         </section>
         <h3>@Model.Name</h3>
     </section>
@@ -30,7 +30,7 @@
             <dt>Disciplines</dt>
             <dd>@Model.Keywords</dd>
             <dt>Technologies</dt>
-            <dd>ASP.NET MVC3, C#, MongoDB, Backbone.js, Knockout.js, jQuery</dd>
+            <dd>@Model.Technologies</dd>
         </dl>
     </section>
     <section class="grid_7" id="description">
