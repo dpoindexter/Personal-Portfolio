@@ -5,11 +5,16 @@
 <article id="project" class="grid_12">
     <section class="project-nav" style="">
         <h3>@Model.Name</h3>
+        <img src="back.png" data-bind="visible: afterFirst(), click: movePrevious" alt="<<"/>   
+        <!-- ko foreach: images -->
+            <img data-bind="attr: { src: $parent.isActive($data) }, click: $parent.moveTo" alt=" "/>
+        <!-- /ko -->
+        <img src="forward.png" data-bind="visible: beforeLast(), click: moveNext" alt=">>"/> 
     </section>
     <section id="gallery">
         <figure>
-            <img src="@Url.Content("~/img/" + Model.Images.First().Src)" alt="" width="699"/>
-            <figcaption>@Model.Images.First().Caption</figcaption>    
+            <img data-bind="attr: { src: current().src, alt: current().caption }" width="699"/>
+            <figcaption data-bind="text: current().caption"></figcaption>
         </figure>
     </section>
     <section class="grid_4" id="overview">
@@ -28,6 +33,76 @@
         <p>@Model.Description</p>
     </section>
 </article>
+
+}
+
+@section scripts {
+
+<script type="text/javascript">
+
+    var imageData = @Html.Raw(Json.Encode(Model.ImagesToJsonModels()));
+
+    function Image(data) {
+        this.ix = ko.observable(data.ix);
+        this.src = ko.observable(data.src);
+        this.caption = ko.observable(data.caption);
+    }
+
+    var images = _.map(imageData, function(img){
+        return new Image(img); 
+    });
+
+    function Gallery(observables) {
+        var self = this;
+
+        self.current = ko.observable(observables[0]);
+        self.images = ko.observableArray(observables);
+
+        self.addImage = function(img) {
+            self.images.push(img);
+        }
+
+        self.removeImage = function(img, event) {
+            self.images.remove(img);
+        }
+
+        self.moveNext = function(){
+            if (self.beforeLast())
+                self.current(self.images()[self.current().ix() + 1]);
+        }
+
+        self.movePrevious = function(){
+            if (self.afterFirst())
+                self.current(self.images()[self.current().ix() - 1]);
+        }
+
+        self.moveTo = function(img){
+            self.current(img);
+        }
+
+        self.afterFirst = function(){
+            var test = self.current().ix() > 0;
+            console.log(test);
+            return test;
+        }
+
+        self.beforeLast = function(){
+            var test = self.current().ix() < (self.images().length - 1);
+            console.log(test);
+            return test;
+        }
+
+        self.isActive = function(img){
+            return (img.ix() === self.current().ix())
+                ? '@Url.Content("~/img/elements/thumb-active.png")'
+                : '@Url.Content("~/img/elements/thumb-inactive.png")';
+        }
+    }
+
+    var test = new Gallery(images);
+
+    ko.applyBindings(test);
+</script>
 
 }
 

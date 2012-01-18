@@ -22,7 +22,17 @@ namespace Portfolio.Models
         public string SiteUrl { get; set; }
         public string Keywords { get; set;}
         public string Thumbnail { get; set; }
-        public IEnumerable<Image> Images { get; set; }
+        public List<Image> Images { get; set; }
+
+        public IEnumerable<ImageJsonViewModel> ImagesToJsonModels()
+        {
+            var images = new List<ImageJsonViewModel>();
+            for (var i = 0; i < Images.Count(); i++)
+            {
+                images.Add(new ImageJsonViewModel(Images[i], i));
+            }
+            return images;
+        }
     }
 
     public class Image
