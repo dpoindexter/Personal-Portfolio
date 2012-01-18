@@ -172,3 +172,10 @@ a#gallery-next.inactive {
     cursor: default;
     background-image: none;
 }
+
+/* Definition lists */
+
+#overview dl {
+    padding-left: 20px;
+    font-size: 1em;
+}
