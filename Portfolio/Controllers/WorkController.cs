@@ -13,11 +13,16 @@ namespace Portfolio.Controllers
         //
         // GET: /Work/
 
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
             var projects = new mongo().GetCollection<Project>();
             return View(projects);
         }
 
+        public ActionResult Project(int id)
+        {
+            var project = new mongo().FindOne<Project>(p => p.Id == id);
+            return View(project);
+        }
     }
 }

@@ -20,6 +20,7 @@ header {
 
 footer {
     border-top: 1px solid black;
+    padding: 0;
 }
 
 nav {
@@ -64,6 +65,12 @@ h2 {
     line-height: 1em;
 }
 
+h3 {
+    margin: 0;
+    padding: 0;
+    line-height: 1em; 
+}
+
 p {
     font-size: 1.6em;
     line-height: 1.5625em;
@@ -82,7 +89,7 @@ p {
     padding-left: 20px;
 }
 
-#work figure {
+figure {
     margin: 0 0 20px 0;
     padding: 20px  0 0 20px;
     background: url(../img/elements/horizontal-dash.png) repeat-x left top;
@@ -92,7 +99,7 @@ figure img {
     display: block;    
 }
 
-#work figcaption {
+figcaption {
     color: white;
     background: #000;
     line-height: 2.14em;
@@ -103,4 +110,8 @@ figure img {
 
 a.project {
     text-decoration: none;
+}
+
+.project-nav {
+    padding: 0 0 20px 20px;
 }

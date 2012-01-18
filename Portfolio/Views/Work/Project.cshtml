@@ -1,0 +1,33 @@
+﻿@model Portfolio.Models.Project
+
+@section article {
+
+<article id="project" class="grid_12">
+    <section class="project-nav" style="">
+        <h3>@Model.Name</h3>
+    </section>
+    <section id="gallery">
+        <figure>
+            <img src="@Url.Content("~/img/" + Model.Images.First().Src)" alt="" width="699"/>
+            <figcaption>@Model.Images.First().Caption</figcaption>    
+        </figure>
+    </section>
+    <section class="grid_4" id="overview">
+        <dl>
+            <dt>Client</dt>
+            <dd>@Model.Client</dd>
+            <dt>Site</dt>
+            <dd><a href="@Model.SiteUrl" target="_blank">@Model.SiteUrl</a></dd>
+            <dt>Disciplines</dt>
+            <dd>@Model.Keywords</dd>
+            <dt>Technologies</dt>
+            <dd>ASP.NET MVC3, C#, MongoDB, Backbone.js, Knockout.js, jQuery</dd>
+        </dl>
+    </section>
+    <section class="grid_7" id="description">
+        <p>@Model.Description</p>
+    </section>
+</article>
+
+}
+
