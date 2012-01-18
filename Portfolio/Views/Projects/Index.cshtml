@@ -1,0 +1,51 @@
+@model IEnumerable<Portfolio.Models.Project>
+
+@{
+    ViewBag.Title = "All Projects";
+}
+
+@section article {
+<article>
+    <h2>All Projects</h2>
+
+    <p>
+        @Html.ActionLink("Add a Project", "Create", "Projects", new { }, new { @class = "btn primary" })
+    </p>
+    <table>
+        <tr>
+            <th></th>
+            <th>
+                Name
+            </th>
+            <th>
+                Thumbnail
+            </th>
+            <th>
+                Images
+            </th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            </td>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @Html.DisplayTextFor(_ => item.Thumbnail).ToString()
+            </td>
+            <td>
+                @(item.Images == null ? "None" : item.Images.Count().ToString())
+            </td>
+        </tr>
+    }
+
+    </table>
+</article>
+}
+
+

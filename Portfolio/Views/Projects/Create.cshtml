@@ -1,0 +1,115 @@
+@model Portfolio.Models.Project
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@section article {
+    <h2>Add a Project</h2>
+
+    @using (Html.BeginForm()) {
+        <fieldset>
+            <div class="clearfix">
+                <label for="Name">Project Name</label>
+                <div class="input"><input type="text" id="Name" name="Name" placeholder="My new project"/></div>
+            </div>
+            <div class="clearfix">
+                <label for="Description">Description</label>
+                <div class="input"><textarea id="Description" name="Description" placeholder="Description"></textarea></div>
+            </div>
+            <div class="clearfix">
+                <label for="Client">Client</label>
+                <div class="input"><input type="text" id="Client" name="Client" placeholder="Client"></div>
+            </div>
+            <div class="clearfix">
+                <label for="SiteUrl">Url</label>
+                <div class="input"><input type="text" id="SiteUrl" name="SiteUrl" placeholder="http://www.example.com"></div>
+            </div>
+            <div class="clearfix">
+                <label for="Keywords">Keywords</label>
+                <div class="input"><textarea id="Keywords" name="Keywords" placeholder="ASP.NET MVC3, C#"></textarea></div>
+            </div>
+            <div class="clearfix">
+                <label for="Thumbnail">Thumbnail Image File</label>
+                <div class="input">
+                    <div class="input-prepend">
+                        <span class="add-on">~/img/work/</span>
+                        <input type="text" id="Thumbnail" name="Thumbnail" placeholder="Thumbnail File Name"/>
+                    </div>
+                </div>
+            </div>
+            <fieldset>
+                <legend>Project Images</legend>
+                <!-- ko foreach: project.images -->
+                <div class="clearfix">
+                    <label data-bind="attr: { for: srcFieldId }">Image File</label>
+                    <div class="input">
+                        <div class="input-prepend">
+                            <span class="add-on">~/img/work/</span>
+                            <input type="text" placeholder="File Name" data-bind="attr: { name: srcFieldName, id: srcFieldId }, value: src"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix">
+                    <label data-bind="attr: { for: captionFieldId }">Caption</label>
+                    <div class="input">
+                        <input type="text" placeholder="Caption" data-bind="attr: { name: captionFieldName, id: captionFieldId, value: caption}"/>
+                    </div>
+                </div>
+                <!-- /ko -->
+                <div class="actions">
+                    <button data-bind="click: project.addImage" class="btn small">Add an image</button>
+                </div>
+            </fieldset>
+            <div class="actions">
+                <input class="btn primary" type="submit" value="Save changes">
+                <button class="btn" type="reset">Cancel</button>
+            </div>
+        </fieldset>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
+
+@section scripts {
+<script type="text/javascript">
+
+    function ProjectViewModel() {
+        var self = this;
+
+        self.images = ko.observableArray([]);
+
+        self.addImage = function (data) {
+            var currLen = self.images().length;
+            var data = _.defaults(data || {}, self.defaultImage(currLen));
+            self.images.push(data);
+        }
+
+        self.removeImage = function () {
+            self.images.remove(this);
+        }
+
+        self.defaultImage = function (num) {
+            return {
+                src: "",
+                caption: "",
+                srcFieldName: "Images[" + num + "].Src",
+                srcFieldId: "Images_" + num + "__Src",
+                captionFieldName: "Images[" + num + "].Caption",
+                captionFieldId: "Images_" + num + "__Caption"
+            };
+        }
+    }
+
+    var project = new ProjectViewModel();
+    project.addImage();
+
+    ko.applyBindings();
+
+
+</script>
+}
+
+

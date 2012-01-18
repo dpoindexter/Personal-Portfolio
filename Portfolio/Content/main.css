@@ -1,0 +1,106 @@
+@import url("http://fonts.googleapis.com/css?family=Squada+One");
+@import url("type/titillium.css");
+@import url("grid.css");
+
+body {
+    font-family: "TitilliumMedium";
+    background: url(../img/elements/bg.png) left top repeat;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    font-size: 62.5%;
+}
+
+header {
+    height: 177px;
+    border-bottom: 3px solid black;
+    margin: 0;
+    background: url(../img/elements/horizontal-dash.png) repeat-x left 170px;
+}
+
+footer {
+    border-top: 1px solid black;
+}
+
+nav {
+    margin: 0;
+    padding-top: 24px;
+}
+
+nav a {
+    display: block;
+    font-family: "Squada One";
+    font-size: 2.5em;
+    text-transform: uppercase;
+    line-height: 2em;
+    color: black;
+    text-decoration: none;
+    padding-left: 0.8em;
+}
+
+nav a:hover {
+    color: red;
+}
+
+section#about {
+    font-family: "TitilliumBold";
+    font-size: 2em;
+    line-height: 1.5em;
+    padding-top: 30px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #000000;
+    font-weight: bold;
+}
+
+h2 {
+    font-family: "Squada One";
+    font-size: 3.6em;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin: 0 0 20px 0;
+    padding: 0;
+    line-height: 1em;
+}
+
+p {
+    font-size: 1.6em;
+    line-height: 1.5625em;
+    margin-top: .625em;
+    margin-bottom: 0;
+}
+
+.container_16 article.grid_12 {
+    width: 719px;
+    border-left: 1px solid black;
+    padding-top: 25px;
+    padding-bottom: 0px;
+}
+
+#work h2 {
+    padding-left: 20px;
+}
+
+#work figure {
+    margin: 0 0 20px 0;
+    padding: 20px  0 0 20px;
+    background: url(../img/elements/horizontal-dash.png) repeat-x left top;
+}
+
+figure img {
+    display: block;    
+}
+
+#work figcaption {
+    color: white;
+    background: #000;
+    line-height: 2.14em;
+    font-size: 1.4em;
+    padding-left: 10px;
+    display: block;
+}
+
+a.project {
+    text-decoration: none;
+}

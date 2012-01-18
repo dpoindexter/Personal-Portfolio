@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Portfolio.Models.Project>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section article {
+<article id="work" class="grid_12">
+    <h2>Projects</h2>
+    
+    @foreach (var project in Model) {            
+        <a href="@Url.Action("View", "Work", new { id = project.Id })" class="project">
+            <figure>
+                <img src="@Url.Content("~/img/work/" + project.Thumbnail)" alt="@project.Name"/>
+                <figcaption>@project.Name</figcaption>
+            </figure>
+        </a>
+        }
+</article>
+}
