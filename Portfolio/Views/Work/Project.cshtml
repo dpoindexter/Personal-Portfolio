@@ -4,15 +4,19 @@
 
 <article id="project" class="grid_12">
     <section class="project-nav" style="">
+        <section id="thumbnails">
+            <img src="@Url.Content("~/img/elements/back-key.png")" class="keys" alt=" "/>
+            <!-- ko foreach: images -->
+            <a class="thumbnail-graphic" data-bind="click: $parent.moveTo"><img data-bind="attr: { src: $parent.isActive($data) }" alt=" "/></a>
+            <!-- /ko -->
+            <img src="@Url.Content("~/img/elements/next-key.png")" class="keys" alt=" "/>
+        </section>
         <h3>@Model.Name</h3>
-        <img src="back.png" data-bind="visible: afterFirst(), click: movePrevious" alt="<<"/>   
-        <!-- ko foreach: images -->
-            <img data-bind="attr: { src: $parent.isActive($data) }, click: $parent.moveTo" alt=" "/>
-        <!-- /ko -->
-        <img src="forward.png" data-bind="visible: beforeLast(), click: moveNext" alt=">>"/> 
     </section>
     <section id="gallery">
         <figure>
+            <a id="gallery-previous" class="gallery-nav" data-bind="hoverclass: 'active', css: { inactive: !afterFirst() }, click: movePrevious"></a>
+            <a id="gallery-next" class="gallery-nav" data-bind="hoverclass: 'active', css: { inactive: !beforeLast() }, click: moveNext"></a>
             <img data-bind="attr: { src: current().src, alt: current().caption }" width="699"/>
             <figcaption data-bind="text: current().caption"></figcaption>
         </figure>
@@ -38,70 +42,14 @@
 
 @section scripts {
 
+<script type="text/javascript" src="@Url.Content("~/Scripts/gallery.js")"></script>
 <script type="text/javascript">
 
     var imageData = @Html.Raw(Json.Encode(Model.ImagesToJsonModels()));
+    var gallery = new Gallery(imageData);
 
-    function Image(data) {
-        this.ix = ko.observable(data.ix);
-        this.src = ko.observable(data.src);
-        this.caption = ko.observable(data.caption);
-    }
+    ko.applyBindings(gallery);
 
-    var images = _.map(imageData, function(img){
-        return new Image(img); 
-    });
-
-    function Gallery(observables) {
-        var self = this;
-
-        self.current = ko.observable(observables[0]);
-        self.images = ko.observableArray(observables);
-
-        self.addImage = function(img) {
-            self.images.push(img);
-        }
-
-        self.removeImage = function(img, event) {
-            self.images.remove(img);
-        }
-
-        self.moveNext = function(){
-            if (self.beforeLast())
-                self.current(self.images()[self.current().ix() + 1]);
-        }
-
-        self.movePrevious = function(){
-            if (self.afterFirst())
-                self.current(self.images()[self.current().ix() - 1]);
-        }
-
-        self.moveTo = function(img){
-            self.current(img);
-        }
-
-        self.afterFirst = function(){
-            var test = self.current().ix() > 0;
-            console.log(test);
-            return test;
-        }
-
-        self.beforeLast = function(){
-            var test = self.current().ix() < (self.images().length - 1);
-            console.log(test);
-            return test;
-        }
-
-        self.isActive = function(img){
-            return (img.ix() === self.current().ix())
-                ? '@Url.Content("~/img/elements/thumb-active.png")'
-                : '@Url.Content("~/img/elements/thumb-inactive.png")';
-        }
-    }
-
-    var test = new Gallery(images);
-
-    ko.applyBindings(test);
 </script>
 
 }

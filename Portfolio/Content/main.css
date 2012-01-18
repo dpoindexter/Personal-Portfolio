@@ -67,7 +67,7 @@ h2 {
 
 h3 {
     margin: 0;
-    padding: 0;
+    padding: 20px 0 0 0;
     line-height: 1em; 
 }
 
@@ -81,18 +81,19 @@ p {
 .container_16 article.grid_12 {
     width: 719px;
     border-left: 1px solid black;
-    padding-top: 25px;
     padding-bottom: 0px;
 }
 
 #work h2 {
     padding-left: 20px;
+    padding-top: 15px;
 }
 
 figure {
     margin: 0 0 20px 0;
     padding: 20px  0 0 20px;
     background: url(../img/elements/horizontal-dash.png) repeat-x left top;
+    position: relative;
 }
 
 figure img {
@@ -114,4 +115,60 @@ a.project {
 
 .project-nav {
     padding: 0 0 20px 20px;
+}
+
+section#thumbnails {
+    float: right;
+    margin-top: 10px;
+}
+
+img.keys {
+    display: inline-block;
+    margin: 5px;  
+}
+
+a.thumbnail-graphic {
+    display: inline-block;
+    width: 46px;
+    line-height: 36px;
+    text-align: center;
+}
+
+a#back-key {
+    background: url(../img/elements/back-key.png) no-repeat center center;   
+}
+
+a#next-key {
+    background: url(../img/elements/next-key.png) no-repeat center center;   
+}
+
+a.gallery-nav {
+    display: block;
+    position: absolute;
+    z-index: 1000;
+    height: 100%;
+    width: 100px;
+    cursor: pointer;
+}
+
+a#gallery-previous.active {
+    background: url(../img/elements/back-arrow.png) no-repeat center center;
+}
+
+a#gallery-previous.inactive {
+    cursor: default;
+    background-image: none;
+}
+
+a#gallery-next {
+    right: 0px;   
+}
+
+a#gallery-next.active {
+    background: url(../img/elements/next-arrow.png) no-repeat center center;
+}
+
+a#gallery-next.inactive {
+    cursor: default;
+    background-image: none;
 }

@@ -21,6 +21,7 @@ namespace Portfolio.Models
         public string Client { get; set; }
         public string SiteUrl { get; set; }
         public string Keywords { get; set;}
+        public string Technologies { get; set; }
         public string Thumbnail { get; set; }
         public List<Image> Images { get; set; }
 
