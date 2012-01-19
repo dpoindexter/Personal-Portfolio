@@ -2,6 +2,9 @@
 @import url("type/titillium.css");
 @import url("grid.css");
 
+/* Major layout elements 
+=========================================================================*/
+
 body {
     font-family: "TitilliumMedium";
     background: url(../img/elements/bg.png) left top repeat;
@@ -23,6 +26,17 @@ footer {
     padding: 0;
 }
 
+section#about {
+    font-family: "TitilliumBold";
+    font-size: 2em;
+    line-height: 1.5em;
+    padding-top: 30px;
+}
+
+
+/* Main sidebar navigation
+=========================================================================*/
+
 nav {
     margin: 0;
     padding-top: 24px;
@@ -43,12 +57,9 @@ nav a:hover {
     color: red;
 }
 
-section#about {
-    font-family: "TitilliumBold";
-    font-size: 2em;
-    line-height: 1.5em;
-    padding-top: 30px;
-}
+
+/* Default text styling 
+=========================================================================*/
 
 h1, h2, h3, h4, h5, h6 {
     color: #000000;
@@ -78,6 +89,19 @@ p {
     margin-bottom: 0;
 }
 
+.tag {
+    display: inline-block;
+    background: red;
+    border-radius: 2px;
+    padding: 2px 5px;
+    color: #fff;
+    line-height: 1.5em;
+}
+
+
+/* Grid/layout adjustments 
+=========================================================================*/
+
 .container_16 article.grid_12 {
     width: 719px;
     border-left: 1px solid black;
@@ -88,6 +112,14 @@ p {
     padding-left: 20px;
     padding-top: 15px;
 }
+
+.container_16 article.grid_12 .grid_8 {
+   width: 479px;    
+}
+
+
+/* Figures are used for portfolio images and captions 
+=========================================================================*/ 
 
 figure {
     margin: 0 0 20px 0;
@@ -108,6 +140,10 @@ figcaption {
     padding-left: 10px;
     display: block;
 }
+
+
+/* Portfolio image gallery styles 
+=========================================================================*/
 
 a.project {
     text-decoration: none;
@@ -173,9 +209,45 @@ a#gallery-next.inactive {
     background-image: none;
 }
 
-/* Definition lists */
+
+/* Definition lists 
+=========================================================================*/
 
 #overview dl {
     padding-left: 20px;
-    font-size: 1em;
+    font-size: 1.4em;
+    line-height: 1.3em;
+}
+
+#overview dl dt {
+    margin-bottom: 5px;
+}
+
+#overview dl dd {
+    margin-left: 0;
+    margin-bottom: 20px;
+}
+
+
+/* Project page-specific files
+=========================================================================*/
+
+#description p {
+    font-size: 1.4em;
+    margin-top: 0;
+}
+
+section#gallery {
+    border-bottom: 1px solid #000;
+    background-color: rgba(0,0,0,0.5);
+}
+
+section#overview {
+
+}
+
+section#description {
+    border-left: 1px solid #000;
+    padding-left: 20px;
+    width: 458px;
 }

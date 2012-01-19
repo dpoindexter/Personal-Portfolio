@@ -22,18 +22,29 @@
         </figure>
     </section>
     <section class="grid_4" id="overview">
+        <h4>Overview</h4>
         <dl>
             <dt>Client</dt>
             <dd>@Model.Client</dd>
             <dt>Site</dt>
             <dd><a href="@Model.SiteUrl" target="_blank">@Model.SiteUrl</a></dd>
             <dt>Disciplines</dt>
-            <dd>@Model.Keywords</dd>
+            <dd>
+                @foreach (var str in (Model.Keywords ?? "").Split(new char[] {','}, StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim())) { 
+                    <span class="tag">@str</span>
+                }
+            </dd>
             <dt>Technologies</dt>
-            <dd>@Model.Technologies</dd>
+            <dd>
+                @foreach (var str in (Model.Technologies ?? "").Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim()))
+                { 
+                    <span class="tag">@str</span>
+                }
+            </dd>
         </dl>
     </section>
-    <section class="grid_7" id="description">
+    <section class="grid_8" id="description">
+        <h4>About the project</h4>
         <p>@Model.Description</p>
     </section>
 </article>
