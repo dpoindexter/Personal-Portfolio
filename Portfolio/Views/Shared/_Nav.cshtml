@@ -1,16 +1,23 @@
-﻿<a href="@Url.Action("Index", "Work")">
+﻿@{
+    var controller = ViewContext.Controller.ValueProvider.GetValue("controller").RawValue.ToString().ToUpperInvariant();
+    var work = (controller == "WORK") ? "arrow active" : "arrow";
+    var resume = (controller == "RESUME") ? "arrow active" : "arrow";
+    var about = (controller == "ABOUT") ? "arrow active" : "arrow";
+}
+
+<a href="@Url.Action("Index", "Work")">
     Work
-    <span class="arrow active"></span>
+    <span class="@work"></span>
 </a>
 
 <a href="@Url.Action("Index", "Resume")">
     Résumé
-    <span class="arrow"></span>
+    <span class="@resume"></span>
 </a>
 
 <a href="@Url.Action("Index", "About")">
     About
-    <span class="arrow"></span>
+    <span class="@about"></span>
 </a>
 
 <!--
