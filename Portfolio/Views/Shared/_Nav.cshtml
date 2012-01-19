@@ -1,4 +1,21 @@
-﻿@Html.ActionLink("Work", "Index", "Work")
-@Html.ActionLink("Résumé", "Index", "Resume")
-@Html.ActionLink("About", "Index", "About")
-<a data-controls-modal="contact-modal" data-backdrop="static">Contact</a>
+﻿<a href="@Url.Action("Index", "Work")">
+    Work
+    <span class="arrow active"></span>
+</a>
+
+<a href="@Url.Action("Index", "Resume")">
+    Résumé
+    <span class="arrow"></span>
+</a>
+
+<a href="@Url.Action("Index", "About")">
+    About
+    <span class="arrow"></span>
+</a>
+
+<!--
+<a data-controls-modal="contact-modal" data-backdrop="static">
+    Contact
+    <span class="arrow"></span>
+</a>
+-->

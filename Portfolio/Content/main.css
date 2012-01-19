@@ -22,8 +22,10 @@ header {
 }
 
 footer {
-    border-top: 1px solid black;
-    padding: 0;
+    border-top: 3px solid black;
+    padding: 30px 0 30px 0;
+    margin: 0;
+    background: url(../img/elements/horizontal-dash.png) repeat-x left 10px;
 }
 
 section#about {
@@ -44,6 +46,7 @@ nav {
 
 nav a {
     display: block;
+    position: relative;
     font-family: "Squada One";
     font-size: 2.5em;
     text-transform: uppercase;
@@ -53,8 +56,16 @@ nav a {
     padding-left: 0.8em;
 }
 
-nav a:hover {
-    color: red;
+nav span.arrow {
+    position: absolute;
+    background: url(../img/elements/long-arrow.png) no-repeat center right;
+    height: 100%;
+    width: 60px;
+    left: 120px;
+}
+
+nav span.arrow.active {
+    width: 100px;   
 }
 
 
@@ -89,13 +100,24 @@ p {
     margin-bottom: 0;
 }
 
+a {
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: none;   
+}
+
 .tag {
     display: inline-block;
-    background: red;
+    background: #555;
     border-radius: 2px;
-    padding: 2px 5px;
+    padding: 2px 7px;
     color: #fff;
-    line-height: 1.5em;
+    font-size: 0.9em;
+    font-weight: normal;
+    margin-bottom: 3px;
+    text-shadow: #333 1px 1px 1px;
 }
 
 
@@ -216,16 +238,21 @@ a#gallery-next.inactive {
 #overview dl {
     padding-left: 20px;
     font-size: 1.4em;
-    line-height: 1.3em;
+    line-height: 1em;
+    margin-top: 0;
+    color: #000;
 }
 
 #overview dl dt {
     margin-bottom: 5px;
+    font-weight: normal;
+    color: #777;
 }
 
 #overview dl dd {
     margin-left: 0;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 
@@ -234,12 +261,11 @@ a#gallery-next.inactive {
 
 #description p {
     font-size: 1.4em;
-    margin-top: 0;
+    margin: 0 0 1em 20px;
 }
 
 section#gallery {
     border-bottom: 1px solid #000;
-    background-color: rgba(0,0,0,0.5);
 }
 
 section#overview {
@@ -248,6 +274,48 @@ section#overview {
 
 section#description {
     border-left: 1px solid #000;
-    padding-left: 20px;
-    width: 458px;
+    width: 478px;
+    padding-bottom: 20px;
+    margin-bottom: 1em;   
 }
+
+h4 {
+    background: url(../img/elements/horizontal-dash.png) repeat-x left bottom;
+    padding-left: 20px;
+    margin-bottom: 10px; 
+}
+
+/* About page-specific files
+=========================================================================*/
+
+#about section#description {
+    border-left: none;
+    border-right: 1px solid #000;
+    padding-right: 20px;
+    width: 458px;
+    padding-top: 20px;
+}
+
+#about section#overview {
+    padding-top: 20px;
+}
+
+#about h2 {
+    padding: 18px 20px;
+    background: url(../img/elements/horizontal-dash.png) repeat-x left bottom;
+    margin-bottom: 0;
+}
+
+/* Footer styles
+=========================================================================*/
+
+footer p {
+    float: right;
+    font-size: 1.3em;
+    line-height: 1em;
+    margin-top: 0;
+}
+
+/* Bootstrap form styles
+=========================================================================*/
+

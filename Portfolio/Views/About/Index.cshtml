@@ -1,17 +1,17 @@
 ﻿@{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "About Me";
 }
 
 @section article {
 
 <article id="about" class="grid_12">
     <h2>About Me</h2>
-    <section class="grid_7">
+    <section class="grid_8" id="description">
         <p>I'm a web application generalist. I've got a good bead on every level of the web development process, from database to visual design, but ask me to write an installable program, and I'm going to scratch my head. I didn't learn to program via a Computer Science degree, I learned it by experience and necessity and love. Which sounds vaguely superior, but is really just to say that my domain knowledge is a mile wide and an inch deep. Like I said, a generalist.</p>
         <p>I love web applications. It's wonderful to be able to take an idea from conception to finished, working product, and end up with something that looks good and behaves well. I have a particular crush on responsive, single-page applications that make heavy use of Javascript for seamless interaction.</p>
         <p>I helped to found a company in 2009. Although my partners and I eventually parted ways, it was an amazing experience that taught me bundles. I'm pretty good at grasping the big-picture reasons for doing things, and finding ways to execute them on my own. If there's one problem with that, it's that I haven't yet had the opportunity to work with a full product team. I'm excited to get to work hand-in-hand with other great designers and developers, rather than being a lone technology wolf.</p>
     </section>
-    <section class="grid_4">
+    <section class="grid_4" id="overview">
         <dl>
             <dt>Location</dt>
             <dd>Houston, Texas</dd>
@@ -20,9 +20,24 @@
             <dt>Phone</dt>
             <dd>(832) 626-2125</dd>
             <dt>Disciplines</dt>
-            <dd>Web Application Development, User Interface Design, Visual Design, Programming, Front-End Design</dd>
+            <dd>
+                <span class="tag">Web Application Development</span>
+                <span class="tag">User Interface Design</span>
+                <span class="tag">Visual Design</span>
+                <span class="tag">Programming</span>
+                <span class="tag">Front-End Design</span>
+            </dd>
             <dt>Proficiencies</dt>
-            <dd>C#, ASP.NET MVC, SQL, Javascript, jQuery, HTML5, CSS, Photoshop</dd>
+            <dd>
+                <span class="tag">C#</span>
+                <span class="tag">ASP.NET MVC</span>
+                <span class="tag">SQL</span>
+                <span class="tag">Javascript</span>
+                <span class="tag">jQuery</span>
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS</span>
+                <span class="tag">Photoshop</span>
+            </dd>
         </dl>
     </section>
 </article>
