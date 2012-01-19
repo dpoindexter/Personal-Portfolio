@@ -12,6 +12,7 @@ using Portfolio.Data;
 
 namespace Portfolio.Controllers
 {   
+    [Authorize]
     public class ProjectsController : Controller
     {
         //

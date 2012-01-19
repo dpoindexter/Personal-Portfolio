@@ -61,6 +61,7 @@ namespace Portfolio.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        /*
         //
         // GET: /Account/Register
 
@@ -83,7 +84,7 @@ namespace Portfolio.Controllers
 
                 if (createStatus == MembershipCreateStatus.Success)
                 {
-                    FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);
+                    FormsAuthentication.SetAuthCookie(model.UserName, false);
                     return RedirectToAction("Index", "Home");
                 }
                 else
@@ -95,6 +96,7 @@ namespace Portfolio.Controllers
             // If we got this far, something failed, redisplay form
             return View(model);
         }
+        */
 
         //
         // GET: /Account/ChangePassword
