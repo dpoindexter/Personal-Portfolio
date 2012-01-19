@@ -1,0 +1,133 @@
+﻿@{
+    ViewBag.Title = "Résumé";
+}
+
+@section article {
+    <article  id="resume" class="grid_12">
+        <h2>Résumé</h2>
+
+        <!--<p class="address">(832) 626-2125 • <a href="mailto:daniel@danielpoindexter.com">daniel@danielpoindexter.com</a> • 3720 W. Alabama St. #5317 • Houston, TX 77027</p>-->
+
+        <p class="summary">Web application generalist with broad knowledge of each level of the web stack.  Experienced in modern web application patterns and practices such as REST, MVC, relational databases and NoSQL. Interested in building data-driven, fluid interface web applications. Visual design background with a focus on user interface design and front-end development.</p>
+
+        <h3>Experience</h3>
+        <table class="resume">
+            <tr>
+                <td class="position">
+                    6/2011 – 10/2011<br/>
+                    GE Energy<br/>
+                    Houston, TX
+                </td>
+                <td class="description">
+                    <h4>Contracted Application Development</h4>
+                    <ul>
+                        <li>Worked with client to gather specifications for a custom application to manage group tour requests and scheduling for museum-like facility</li>
+                        <li>Developed as hosted MVC application (.NET 4.0, MVC3 library, C#, Razor)</li>
+                        <li>Implemented complex tour request form using Knockout.js for real-time branching</li>
+                        <li>Used MongoDB/NoRM library as backend for complex objects, SQL Server for SHA-1 hashed authentication and membership data</li>
+                        <li>Developed custom admin reporting interface using Backbone.js/AJAX</li>
+                        <li>Used Jenkins CI/Mercurial for continuous integration deployment to AWS</li>
+                        <li>Designed user interface for request form and administrative backend. Extended jQuery UI for common interface components. Written in HTML5/CSS3</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="position">
+                    3/2010 – 6/2011<br/>
+                    RegStep<br/>
+                    Austin, TX
+                </td>
+                <td class="description">
+                    <h4>Co-Founder, Technical Lead</h4>
+                    <ul>
+                        <li>Led purchase of key IP assets after formation of company</li>
+                        <li>With partners oversaw operations, balance sheets, strategic planning</li>
+                        <li>Interviewed, hired, and managed front-end developers</li>
+                        <li>Created job description and annual objectives for front-end development team</li>
+                        <li>Responsible for all technical assets</li>
+                        <li>Maintained and added features to large legacy web application (ASP Classic). Moved code to version control (Mercurial). Wrote database access library to replace hard-coded SQL strings</li>
+                        <li>Transitioned legacy codebase to AWS. Adapted COM dependencies to run on Windows Server 2008 (from Windows Server 2000). Separated database and application to different VM servers. Wrote Powershell scripts for nightly S3 backups</li>
+                        <li>Administered SQL Server installation. Developed new views and stored procedures to be consumed by web application. Wrote custom queries for specialized reports. Optimized queries to resolve database-dependent performance bottlenecks</li>
+                        <li>Worked with client to develop specifications for a custom expense tracking app. Developed as hosted MVC application (.NET 3.5, MVC2, C#). Developed REST-like API for internal consumption for extensive AJAX requests and updates in the UI. Designed and implemented user interface, in particular a real-time filterable data grid. Developed C# membership provider class for MongoDB to handle authentication data</li>
+                        <li>Wrote ASP Classic library wrappers to First Data, Authroize.Net, and PayPal e-commerce APIs. Integrated new payment methods with existing shopping cart functionality. Developed database schema, queries and encryption protocol to store transaction data</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="position">
+                    9/2007 – 3/2010<br/>
+                    Registration Assistant<br/>
+                    Austin, TX
+                </td>
+                <td class="description">
+                    <h4>Lead Interface Designer, Developer</h4>
+                    <ul>
+                        <li>Redesigned company’s visual identity. Completely overhauled branding, including a new logotype and colors. Designed new print marketing materials to meet new branding specs</li>
+                        <li>Created new public-facing marketing website</li>
+                        <li>Executed complete interface redesign of company’s web application. Researched most-used functions and heavily streamlined reporting functionality. Developed reusable UI component visual styles (dialogs, buttons, data grids, etc.)</li>
+                        <li>Executed front-end development (HTML, CSS, Javascript) for redesigned app. Ensured cross-browser compatibility with IE6+. Coded standards-compliant XHTML into ASP Classic view pages</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="position">
+                    2/2005 – 9/2007<br/>
+                    Registration Assistant<br/>
+                    Austin, TX
+                </td>
+                <td class="description">
+                    <h4>Front-End Developer, Account Manager</h4>
+                    <ul>
+                        <li>Translated clients’ requirements into custom hosted data collection forms using company’s form builder application</li>
+                        <li>Wrote XHTML and CSS to exactly reproduce clients’ corporate branding guidelines, so clients were able to seamlessly link their users to hosted forms</li>
+                        <li>Developed excellent working relationships with clients; served as primary point-of-contact and front-line technical support. Most clients became repeat customers many times over</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
+        <h3>Education</h3>
+        <table class="resume">
+            <tr>
+                <td class="position">
+                    2002-2007<br/>
+                    UT Austin
+                </td>
+                <td class="description">
+                    <h4>Bachelor of Science – Communications	</h4>
+                    Major: Radio/Television/Film
+                </td>
+            </tr>
+        </table>
+
+        <table class="resume small">
+            <tr>
+                <td class="position">
+                    <h3>Proficiencies</h3>
+                </td>
+                <td class="description">
+                    <ul>	
+                        <li>C#, ASP.NET, ASP.NET MVC3</li>
+                        <li>SQL, MS SQL Server, MongoDB</li>
+                        <li>ASP Classic, VBScript</li>
+                        <li>Javascript, AJAX, jQuery, jQuery UI, Backbone, Knockout</li>
+                        <li>HTML5, CSS3, Cross-browser compatibility</li>
+                        <li>Photoshop, Illustrator, InDesign</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
+        <table class="resume small">
+            <tr>
+                <td class="position">
+                    <h3>References</h3>
+                </td>
+                <td class="description">
+                    Available upon request
+                </td>
+            </tr>
+        </table>  
+    
+    </article>
+}

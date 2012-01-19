@@ -126,6 +126,7 @@
     <Content Include="img\elements\back-key.png" />
     <Content Include="img\elements\bg.png" />
     <Content Include="img\elements\horizontal-dash.png" />
+    <Content Include="img\elements\long-arrow.png" />
     <Content Include="img\elements\next-arrow.png" />
     <Content Include="img\elements\next-key-disabled.png" />
     <Content Include="img\elements\next-key-down.png" />
