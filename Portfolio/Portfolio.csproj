@@ -40,6 +40,12 @@
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.4.1.10715.0\lib\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="LowercaseRoutesMVC">
+      <HintPath>..\packages\LowercaseRoutesMVC.1.0.3\lib\LowercaseRoutesMVC.dll</HintPath>
+    </Reference>
+    <Reference Include="MarkdownSharp">
+      <HintPath>..\packages\MarkdownSharp.1.13.0.0\lib\35\MarkdownSharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Norm">
       <HintPath>..\packages\NoRM.0.9.8\lib\Norm.dll</HintPath>
@@ -169,6 +175,7 @@
     <Content Include="Scripts\knockout-2.0.0.js" />
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
+    <Content Include="Scripts\project.js" />
     <Content Include="Scripts\underscore-min.js" />
     <Content Include="Scripts\underscore.js" />
     <Content Include="Web.config">
@@ -203,7 +210,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Resume\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -256,6 +262,8 @@
     <None Include="Content\bootstrap\tables.less" />
     <None Include="Content\bootstrap\type.less" />
     <None Include="Content\bootstrap\variables.less" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Resume\Index.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

@@ -1,4 +1,9 @@
-﻿@model Portfolio.Models.Project
+﻿@using MarkdownSharp
+@model Portfolio.Models.Project
+           
+@{
+    var markdown = new Markdown();
+}
 
 @section article {
 
@@ -45,7 +50,7 @@
     </section>
     <section class="grid_8" id="description">
         <h4>About the project</h4>
-        <p>@Model.Description</p>
+        <p>@Html.Raw(markdown.Transform(Model.Description))</p>
     </section>
 </article>
 
@@ -56,7 +61,7 @@
 <script type="text/javascript" src="@Url.Content("~/Scripts/gallery.js")"></script>
 <script type="text/javascript">
 
-    var imageData = @Html.Raw(Json.Encode(Model.ImagesToJsonModels()));
+    var imageData = @Html.Raw(Json.Encode(Model.ImagesToIndexedJson()));
     var gallery = new Gallery(imageData);
 
     ko.applyBindings(gallery);

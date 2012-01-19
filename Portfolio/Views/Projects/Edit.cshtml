@@ -8,21 +8,84 @@
 
 <h2>Edit</h2>
 
-@using (Html.BeginForm()) {
-    @Html.ValidationSummary(true)
-    <fieldset>
-        <legend>Project</legend>
+    @using (Html.BeginForm()) {
+        @Html.HiddenFor(model => model.Id)
+        <fieldset>
+            <div class="clearfix">
+                <label for="Name">Project Name</label>
+                <div class="input"><input type="text" id="Name" name="Name" placeholder="My new project" value="@Model.Name"/></div>
+            </div>
+            <div class="clearfix">
+                <label for="Description">Description</label>
+                <div class="input"><textarea id="Description" name="Description" placeholder="Description">@Model.Description</textarea></div>
+            </div>
+            <div class="clearfix">
+                <label for="Client">Client</label>
+                <div class="input"><input type="text" id="Client" name="Client" placeholder="Client" value="@Model.Client"></div>
+            </div>
+            <div class="clearfix">
+                <label for="SiteUrl">Link</label>
+                <div class="input"><input type="text" id="SiteUrl" name="SiteUrl" placeholder="http://www.example.com" value="@Model.SiteUrl"></div>
+            </div>
+            <div class="clearfix">
+                <label for="Keywords">Disciplines</label>
+                <div class="input"><textarea id="Keywords" name="Keywords" placeholder="Visual Design, Back-End Code">@Model.Keywords</textarea></div>
+            </div>
+            <div class="clearfix">
+                <label for="Technologies">Technologies</label>
+                <div class="input"><textarea id="Technologies" name="Technologies" placeholder="ASP.NET MVC3, C#">@Model.Technologies</textarea></div>
+            </div>
+            <div class="clearfix">
+                <label for="Thumbnail">Thumbnail Image File</label>
+                <div class="input">
+                    <div class="input-prepend">
+                        <span class="add-on">~/img/work/</span>
+                        <input type="text" id="Thumbnail" name="Thumbnail" placeholder="Thumbnail File Name" value="@Model.Thumbnail"/>
+                    </div>
+                </div>
+            </div>
+            <fieldset>
+                <legend>Project Images</legend>
+                <!-- ko foreach: images -->
+                <div class="clearfix">
+                    <label data-bind="attr: { for: srcFieldId }">Image File</label>
+                    <div class="input">
+                        <div class="input-prepend">
+                            <span class="add-on">~/img/work/</span>
+                            <input type="text" placeholder="File Name" data-bind="attr: { name: srcFieldName, id: srcFieldId }, value: src"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix">
+                    <label data-bind="attr: { for: captionFieldId }">Caption</label>
+                    <div class="input">
+                        <input type="text" placeholder="Caption" data-bind="attr: { name: captionFieldName, id: captionFieldId}, value: caption"/>
+                    </div>
+                </div>
+                <!-- /ko -->
+                <div class="actions">
+                    <button data-bind="click: addImage" class="btn small">Add an image</button>
+                </div>
+            </fieldset>
+            <div class="actions">
+                <input class="btn primary" type="submit" value="Save changes">
+                <button class="btn" type="reset">Cancel</button>
+            </div>
+        </fieldset>
+    }
 
-        @Html.HiddenFor(model => model.ProjectId)
-        @Html.Partial("_CreateOrEdit", Model)
-
-        <p>
-            <input type="submit" value="Save" />
-        </p>
-    </fieldset>
-}
 
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+}
+
+@section scripts {
+<script type="text/javascript" src="@Url.Content("~/Scripts/project.js")"></script>
+<script type="text/javascript">
+
+    var imageData = @Html.Raw(Json.Encode(Model.ImagesToJson()));
+    ko.applyBindings(new ProjectViewModel(imageData));
+
+</script>
 }

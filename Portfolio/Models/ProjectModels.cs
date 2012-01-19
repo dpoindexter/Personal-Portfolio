@@ -25,7 +25,7 @@ namespace Portfolio.Models
         public string Thumbnail { get; set; }
         public List<Image> Images { get; set; }
 
-        public IEnumerable<ImageJsonViewModel> ImagesToJsonModels()
+        public IEnumerable<ImageJsonViewModel> ImagesToJsonModelsOld()
         {
             var images = new List<ImageJsonViewModel>();
             for (var i = 0; i < Images.Count(); i++)
@@ -33,6 +33,21 @@ namespace Portfolio.Models
                 images.Add(new ImageJsonViewModel(Images[i], i));
             }
             return images;
+        }
+
+        public IEnumerable<object> ImagesToJson()
+        {
+            return this.Images.Select(img => new { src = img.Src, caption = img.Caption });
+        }
+
+        public IEnumerable<object> ImagesToIndexedJson()
+        {
+            return this.Images.Select(
+                (img, i) => new { 
+                    ix = i, 
+                    src = VirtualPathUtility.ToAbsolute("~/img/" + img.Src),
+                    caption = img.Caption
+                });
         }
     }
 

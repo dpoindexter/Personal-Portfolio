@@ -44,7 +44,7 @@
             </div>
             <fieldset>
                 <legend>Project Images</legend>
-                <!-- ko foreach: project.images -->
+                <!-- ko foreach: images -->
                 <div class="clearfix">
                     <label data-bind="attr: { for: srcFieldId }">Image File</label>
                     <div class="input">
@@ -62,7 +62,7 @@
                 </div>
                 <!-- /ko -->
                 <div class="actions">
-                    <button data-bind="click: project.addImage" class="btn small">Add an image</button>
+                    <button data-bind="click: addImage" class="btn small">Add an image</button>
                 </div>
             </fieldset>
             <div class="actions">
@@ -78,40 +78,10 @@
 }
 
 @section scripts {
+<script type="text/javascript" src="@Url.Content("~/Scripts/project.js")"></script>
 <script type="text/javascript">
 
-    function ProjectViewModel() {
-        var self = this;
-
-        self.images = ko.observableArray([]);
-
-        self.addImage = function (data) {
-            var currLen = self.images().length;
-            var data = _.defaults(data || {}, self.defaultImage(currLen));
-            self.images.push(data);
-        }
-
-        self.removeImage = function () {
-            self.images.remove(this);
-        }
-
-        self.defaultImage = function (num) {
-            return {
-                src: "",
-                caption: "",
-                srcFieldName: "Images[" + num + "].Src",
-                srcFieldId: "Images_" + num + "__Src",
-                captionFieldName: "Images[" + num + "].Caption",
-                captionFieldId: "Images_" + num + "__Caption"
-            };
-        }
-    }
-
-    var project = new ProjectViewModel();
-    project.addImage();
-
-    ko.applyBindings();
-
+    ko.applyBindings(new ProjectViewModel());
 
 </script>
 }
