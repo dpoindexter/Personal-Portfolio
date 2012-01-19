@@ -10,11 +10,11 @@
 <article id="project" class="grid_12">
     <section class="project-nav" style="">
         <section id="thumbnails">
-            <img src="@Url.Content("~/img/elements/back-key.png")" class="keys" id="back-key" alt=" "/>
+            <img src="@Url.Content("~/img/elements/back-key.png")" class="keys" id="back-key" alt=" " data-bind="attr: { src: (afterFirst()) ? backKeyStates.normal : backKeyStates.disabled }, click: movePrevious"/>
             <!-- ko foreach: images -->
             <a class="thumbnail-graphic" data-bind="click: $parent.moveTo"><img data-bind="attr: { src: $parent.isActive($data) }" alt=" "/></a>
             <!-- /ko -->
-            <img src="@Url.Content("~/img/elements/next-key.png")" class="keys" id="next-key" alt=" "/>
+            <img src="@Url.Content("~/img/elements/next-key.png")" class="keys" id="next-key" alt=" " data-bind="attr: { src: (beforeLast()) ? nextKeyStates.normal : nextKeyStates.disabled }, click: moveNext"/>
         </section>
         <h3>@Model.Name</h3>
     </section>
@@ -22,7 +22,7 @@
         <figure>
             <a id="gallery-previous" class="gallery-nav" data-bind="hoverclass: 'active', css: { inactive: !afterFirst() }, click: movePrevious"></a>
             <a id="gallery-next" class="gallery-nav" data-bind="hoverclass: 'active', css: { inactive: !beforeLast() }, click: moveNext"></a>
-            <img data-bind="attr: { src: current().src, alt: current().caption }" width="699"/>
+            <img data-bind="attr: { src: current().src, alt: current().caption }" width="719"/>
             <figcaption data-bind="text: current().caption"></figcaption>
         </figure>
     </section>

@@ -4,8 +4,21 @@
 <head>
     <title>@(ViewBag.Title ?? "Web Application Development | Daniel Poindexter")</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" href="@Url.Content("~/Content/bootstrap/bootstrap.less")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/bootstrap/bootstrap.css")">
     <link href="@Url.Content("~/content/main.css")" rel="stylesheet" type="text/css"/>
+    <!--[if lt IE 9]>
+    <script type="text/javascript">
+        document.createElement('header');
+        document.createElement('nav');
+        document.createElement('section');
+        document.createElement('article');
+        document.createElement('aside');
+        document.createElement('footer');
+        document.createElement('hgroup');
+        document.createElement('figure');
+        document.createElement('figcaption');
+    </script>
+    <![endif]-->
     @RenderSection("styles", required: false)
 </head>
 <body>

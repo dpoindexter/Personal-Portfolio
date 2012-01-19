@@ -2,6 +2,10 @@
 @import url("type/titillium.css");
 @import url("grid.css");
 
+header, nav, section, article, aside, footer, hgroup, figure { 
+    display: block;
+}
+
 /* Major layout elements 
 =========================================================================*/
 
@@ -156,11 +160,23 @@ figure img {
 
 figcaption {
     color: white;
-    background: #000;
+    background-color: #000;
     line-height: 2.14em;
     font-size: 1.4em;
     padding-left: 10px;
     display: block;
+}
+
+#project figure {
+    margin: 0; 
+    padding: 0;
+    background-image: none;  
+    border-top: 1px solid black;
+}
+
+#project figcaption {
+    padding-left: 32px;
+    background: #000 url(../img/elements/up-arrow.png) no-repeat 16px 8px;
 }
 
 
@@ -311,9 +327,22 @@ footer p {
 
 /* Resume page-specific styles
 =========================================================================*/
+#resume {
+    padding-bottom: 20px; 
+}
+
+#resume h3 {
+    margin: 0 0 0 20px;
+    padding: 0;
+    line-height: 1em;
+}
+
+p.summary {
+    margin: 20px 0 20px 20px;
+    font-size: 1.4em;
+}
 
 table.resume {
-    border-top: 1px solid black;
     margin-top: 10px;
     margin-left: 20px;
     width: auto;
@@ -325,27 +354,60 @@ table.resume {
     border-bottom: none;
     border-left: none;
     padding: 0;
+    margin-bottom: 20px;
+}
+
+.resume.small td {
+    border-top: none;   
 }
 
 .resume td.position {
     border-right: 1px solid #666;
-    width: 180px;
+    width: 165px;
     text-align: right;
+    padding: 8px 15px 0 0;
+    text-transform: uppercase;
+    color: #000;
+    line-height: 1.5em;
+}
+
+.resume.small td.position {
+    text-align: left;
+    padding-top: 0; 
 }
 
 .resume td.description {
-    
+    color: #666;
+    padding: 10px 0 0 10px;
+    font-size: 1.1em;
+    line-height: 1.3em;
 }
 
-.resume h3 {
+.resume.small td.description {
+    padding-top: 0;   
+}
+
+#resume .resume h3 {
     margin: 0;
     padding: 0;
     line-height: 1em;   
+    text-transform: none;
 }
 
 .resume h4 {
     margin: 0;
-    padding: 0;
+    padding: 0 0 10px 0;
     line-height: 1em;
+    font-size: 1em
+}
+
+#resume ul {
+    margin-left: 15px;   
+}
+
+#resume li {
+    color: #666;
+    font-size: 1em;
+    padding-bottom: 10px;   
 }
 

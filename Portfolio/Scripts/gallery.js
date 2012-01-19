@@ -64,23 +64,22 @@ function Gallery(images) {
             : IMGPATH + "elements/thumb-inactive.png";
     }
 
-    self.showPreviousButton = function(me, event) {
-        var el = $(event.currentTarget)
-        if (self.afterFirst())
-            el.addClass("active");
-        else
-            el.removeClass("active");
+    self.backKeyStates = {
+        normal: IMGPATH + "elements/back-key.png",
+        down: IMGPATH + "elements/back-key-down.png",
+        disabled: IMGPATH + "elements/back-key-disabled.png"
     }
 
-    self.showNextButton = function(me, event) {
-        var el = $(event.currentTarget)
-        if (self.beforeLast())
-            el.addClass("active");
-        else
-            el.removeClass("active");
+    self.nextKeyStates = {
+        normal: IMGPATH + "elements/next-key.png",
+        down: IMGPATH + "elements/next-key-down.png",
+        disabled: IMGPATH + "elements/next-key-disabled.png"
     }
 
     init = function () {
+        var backKey = $("#back-key");
+        var nextKey = $("#next-key");
+
         //Push in the initial data
         _.each(images, function (img) {
             var preload = new Image().src = img.src;
@@ -90,13 +89,26 @@ function Gallery(images) {
         self.current(self.images()[0]);
 
         //Add a listener for left and right arrow keys
-        $(document).on("keydown", function (event) {
-            if (event.which === 39 && self.moveNext()) {
-                var pre = $("#back-key").attr("src")
-            }
-            else if (event.which === 37 && self.movePrevious()) {
+        $(document).on({
+            keydown: function (event) {
+                if (event.which === 39 && self.moveNext())
+                    nextKey.attr("src", self.nextKeyStates.down);
 
+                else if (event.which === 37 && self.movePrevious())
+                    backKey.attr("src", self.backKeyStates.down);
+            },
+            keyup: function (event) {
+                if (event.which === 39)
+                    nextKey.attr("src", (!self.beforeLast()) ? self.nextKeyStates.disabled : self.nextKeyStates.normal);
+
+                else if (event.which === 37)
+                    backKey.attr("src", (!self.afterFirst()) ? self.backKeyStates.disabled : self.backKeyStates.normal);
             }
+        });
+
+        $("#back-key").on("gallerybackkey", function () {
+            console.log(this);
+            $(this).attr("src", self.backKeyStates.down).delay();
         });
     } ()
 }
