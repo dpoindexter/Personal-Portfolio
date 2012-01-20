@@ -1,5 +1,4 @@
-@import url("http://fonts.googleapis.com/css?family=Squada+One");
-@import url("type/titillium.css");
+@import url(http://fonts.googleapis.com/css?family=Gudea:400,400italic,700|Patua+One|Squada+One);
 @import url("grid.css");
 
 header, nav, section, article, aside, footer, hgroup, figure { 
@@ -10,7 +9,7 @@ header, nav, section, article, aside, footer, hgroup, figure {
 =========================================================================*/
 
 body {
-    font-family: "TitilliumMedium";
+    font-family: "Gudea";
     background: url(../img/elements/bg.png) left top repeat;
     padding: 0;
     margin: 0;
@@ -33,10 +32,11 @@ footer {
 }
 
 section#about {
-    font-family: "TitilliumBold";
+    font-family: "Patua One";
     font-size: 2em;
     line-height: 1.5em;
     padding-top: 30px;
+    color: Black;
 }
 
 
@@ -93,9 +93,11 @@ h2 {
 }
 
 h3 {
+    font-family: "Patua One";
     margin: 0;
     padding: 20px 0 0 0;
     line-height: 1em; 
+    font-size: 2em;
 }
 
 p {
@@ -369,6 +371,7 @@ table.resume {
     text-transform: uppercase;
     color: #000;
     line-height: 1.5em;
+    font-weight: bold;
 }
 
 .resume.small td.position {
@@ -377,7 +380,7 @@ table.resume {
 }
 
 .resume td.description {
-    color: #666;
+    color: #444;
     padding: 10px 0 0 10px;
     font-size: 1.1em;
     line-height: 1.3em;
@@ -398,7 +401,8 @@ table.resume {
     margin: 0;
     padding: 0 0 10px 0;
     line-height: 1em;
-    font-size: 1em
+    font-size: 1em;
+    text-transform: uppercase;
 }
 
 #resume ul {
@@ -406,8 +410,13 @@ table.resume {
 }
 
 #resume li {
-    color: #666;
+    color: #444;
     font-size: 1em;
-    padding-bottom: 10px;   
+    padding-bottom: 10px;
+    line-height: 1.4em;
+}
+
+td.position strong {
+    font-weight: bold;
 }
 
