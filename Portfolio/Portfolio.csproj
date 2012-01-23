@@ -119,7 +119,6 @@
     <Content Include="Content\themes\base\jquery.ui.slider.css" />
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
-    <Content Include="Content\type\titillium.css" />
     <Content Include="Global.asax" />
     <Content Include="img\elements\back-arrow.png" />
     <Content Include="img\elements\back-key-disabled.png" />
@@ -218,30 +217,6 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\type\TitilliumText22L001-webfont.eot" />
-    <Content Include="Content\type\TitilliumText22L001-webfont.svg" />
-    <Content Include="Content\type\TitilliumText22L001-webfont.ttf" />
-    <Content Include="Content\type\TitilliumText22L001-webfont.woff" />
-    <Content Include="Content\type\TitilliumText22L002-webfont.eot" />
-    <Content Include="Content\type\TitilliumText22L002-webfont.svg" />
-    <Content Include="Content\type\TitilliumText22L002-webfont.ttf" />
-    <Content Include="Content\type\TitilliumText22L002-webfont.woff" />
-    <Content Include="Content\type\TitilliumText22L003-webfont.eot" />
-    <Content Include="Content\type\TitilliumText22L003-webfont.svg" />
-    <Content Include="Content\type\TitilliumText22L003-webfont.ttf" />
-    <Content Include="Content\type\TitilliumText22L003-webfont.woff" />
-    <Content Include="Content\type\TitilliumText22L004-webfont.eot" />
-    <Content Include="Content\type\TitilliumText22L004-webfont.svg" />
-    <Content Include="Content\type\TitilliumText22L004-webfont.ttf" />
-    <Content Include="Content\type\TitilliumText22L004-webfont.woff" />
-    <Content Include="Content\type\TitilliumText22L005-webfont.eot" />
-    <Content Include="Content\type\TitilliumText22L005-webfont.svg" />
-    <Content Include="Content\type\TitilliumText22L005-webfont.ttf" />
-    <Content Include="Content\type\TitilliumText22L005-webfont.woff" />
-    <Content Include="Content\type\TitilliumText22L006-webfont.eot" />
-    <Content Include="Content\type\TitilliumText22L006-webfont.svg" />
-    <Content Include="Content\type\TitilliumText22L006-webfont.ttf" />
-    <Content Include="Content\type\TitilliumText22L006-webfont.woff" />
     <Content Include="Views\Shared\EditorTemplates\Image.cshtml" />
     <Content Include="Views\Shared\_Nav.cshtml" />
     <Content Include="Views\Projects\Create.cshtml" />
