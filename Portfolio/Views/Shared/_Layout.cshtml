@@ -10,6 +10,9 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     @RenderSection("styles", required: false)
+    <!-- Mixpanel -->
+    <script type="text/javascript">var mpq = []; mpq.push(["init", "12e2fe2d20c448e214faacf229cf808d"]); (function () { var b, a, e, d, c; b = document.createElement("script"); b.type = "text/javascript"; b.async = true; b.src = (document.location.protocol === "https:" ? "https:" : "http:") + "//api.mixpanel.com/site_media/js/api/mixpanel.js"; a = document.getElementsByTagName("script")[0]; a.parentNode.insertBefore(b, a); e = function (f) { return function () { mpq.push([f].concat(Array.prototype.slice.call(arguments, 0))) } }; d = ["init", "track", "track_links", "track_forms", "register", "register_once", "identify", "name_tag", "set_config"]; for (c = 0; c < d.length; c++) { mpq[d[c]] = e(d[c]) } })();</script>
+
 </head>
 <body>
     <section id="content" class="container_16">
